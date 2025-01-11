@@ -14,7 +14,7 @@ with open('data.csv', 'r') as f:
         data[grupo][descripcion] = precio
 
 
-with open('src/ouput.json', 'w', encoding='utf-8') as outfile_json:
+with open('src/output.json', 'w', encoding='utf-8') as outfile_json:
     json.dump(data, outfile_json, indent=4, ensure_ascii=False)
 
 print(json.dumps(data, indent=4, ensure_ascii=False))
