@@ -2,10 +2,6 @@
 
 :root {
 
-  /* Timing functions */
-
-  --tf-bounce: cubic-bezier(0.8, -1, .2, 2);
-
   /* Colores */
 
   --clr-primary: #00009E;
@@ -294,14 +290,6 @@ body>main {
           border: 1px solid var(--clr-neutral-700);
           padding: 10px 20px;
           gap: 50px;
-
-          p {
-            text-transform: lowercase;
-          }
-
-          p:first-child {
-            text-transform: capitalize;
-          }
 
           &.alert {
             border-color: var(--clr-alert);

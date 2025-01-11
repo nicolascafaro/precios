@@ -2,18 +2,21 @@ const $ = (selector = '') => document.querySelector(selector)
 const _$ = (element = HTMLElement, selector = '') => element.querySelector(selector)
 const $$ = (selector = '') => document.querySelectorAll(selector)
 const _$$ = (element = HTMLElement, selector = '') => element.querySelectorAll(selector)
-const { format } = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'ARS', currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0 })
+// const { format } = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'ARS', currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0 })
 
 
 // Carga de datos
 
 const container = $('#data')
 
-fetch('output.json').then(response => response.json()).then(data => {
+fetch('src/output.json').then(response => response.json()).then(data => {
 
   
 
   const empresas = Object.keys(data)
+
+  empresas.shift()
+
 
   for (const empresa of empresas) {
 
@@ -27,7 +30,7 @@ fetch('output.json').then(response => response.json()).then(data => {
 
       articles += `
       <article>
-        <p>${articulo}</p><p>${format(precio)}</p>
+        <p>${articulo}</p><p>${precio}</p>
       </article>
       `
     }
@@ -44,8 +47,7 @@ fetch('output.json').then(response => response.json()).then(data => {
       </label>
     </section>
     <section class="list-container">
-      ${articles
-      }
+      ${articles}
     </section>
   `
 
